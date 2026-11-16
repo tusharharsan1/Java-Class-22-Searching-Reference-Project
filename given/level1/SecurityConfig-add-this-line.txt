@@ -1,0 +1,4 @@
+Paste this line in SecurityConfig, ABOVE the line that has anyRequest().authenticated().
+The first rule that matches wins, so the order matters.
+
+                        .requestMatchers(HttpMethod.POST, "/products/search/**").permitAll()

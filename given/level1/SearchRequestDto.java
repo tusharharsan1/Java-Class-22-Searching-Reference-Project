@@ -1,0 +1,12 @@
+package com.scaler.productcatalogservice.dtos;
+
+import java.math.BigDecimal;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class SearchRequestDto {
+    private String query;
+    private BigDecimal maxPrice;
+}

@@ -1,0 +1,8 @@
+Paste this method inside the ProductRepo interface, before the last closing brace.
+(Add the imports your editor asks for: EntityGraph, Query, Page, Pageable, BigDecimal, State.)
+
+    @EntityGraph(attributePaths = "category")
+    @Query("select p from Product p where p.state = :state "
+            + "and (:word is null or p.name like :word or p.description like :word) "
+            + "and (:maxPrice is null or p.price <= :maxPrice)")
+    Page<Product> search(State state, String word, BigDecimal maxPrice, Pageable pageable);
